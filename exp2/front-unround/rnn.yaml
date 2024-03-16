@@ -1,0 +1,44 @@
+# Corpus opts:
+data:
+    train:
+        path_src: data/src-train.txt
+        path_tgt: data/tgt-train.txt
+    valid:
+        path_src: data/src-dev.txt
+        path_tgt: data/tgt-dev.txt
+
+
+# Vocabulary files
+save_data: data/
+src_vocab: data/src-vocab.txt
+tgt_vocab: data/tgt-vocab.txt
+
+# architectural info
+encoder_type: brnn
+
+# batch info
+batch_size: 64
+
+# Where to save the checkpoints
+save_checkpoint_steps: 1000
+
+# embedding size info
+hidden_size: 100
+share_vocab: True
+src_embeddings: data/embeddings.txt
+embeddings_type: GloVe
+
+# training info
+train_steps: 2900
+valid_steps: 200
+
+# optimization info
+learning_rate: 0.1
+optim: adagrad
+
+# enable logging
+log_file: models/log.txt
+
+# visualize on tensorboard
+tensorboard: True
+tensorboard_log_dir: models/
